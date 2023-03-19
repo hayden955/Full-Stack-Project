@@ -1,0 +1,7 @@
+﻿The two technology stacks chosen for this part of the project leverage REST API’s using python and HTML/JS/CSS with future use of React.
+
+
+For REST API, this gathers data from multiple apis to pick and choose which specific data is needed. We created our own API using multiple other apis and we plan to implement more apis along the way of developing the app.
+
+
+Using HTML / CSS / JS, we so far used the api we created and posted its data specific to user parameters (latitude and longitude). Expanding upon CSS / JS/ HTML tech stacks, we will be implementing React to create and design the webpage. This way, loading time is much faster for individual components and there are so many advantages towards using React in a project, especially like this one.

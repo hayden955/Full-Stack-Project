@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+         
+        #section1 {
+            height: 600px;
+        }
+
+        #section2 {
+            height: 600px; 
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 12px 12px;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        /* changes tab icon when mouse hovers over tab */
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        /* x-icon to close an open tab */
+        .topright {
+            float: right;
+            cursor: pointer;
+            font-size: 28px;
+        }   
+
+        /* turns x-icon red when mouse hovers over icon */
+        .topright:hover {color: red;}
+
+        body {
+          background-color: oldlace; 
+        } 
+
+        h1 {
+            font-size: 62px;
+            font-style: italic;
+            color: steelblue;
+            line-height: 250px;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-style: italic;
+            color: salmon;
+            line-height: 50px;
+        }
+        
+        .custom1 {
+	        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        a {
+            font-size: 30px;
+        }
+        
+        .group label {
+            font-size: 22px;
+            font-family: "Helvetica Neue Light";
+            font-weight: 600;
+        }
+
+        .group2 input {
+            font-size: 20px;
+            font-family: "Helvetica Neue Light";
+            font-weight: 400;
+        }
+
+        /* for standard button parameters (future use). Current buttons are button1 & button2 */
+        .button { 
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 10px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            position: absolute;
+            top: 12px;
+            right: 10px;
+        }
+
+        .button1 {
+            background-color: white; 
+            color: black; 
+            border: 3px solid #008CBA;
+            padding: 10px 22px;
+            font-size: 16px;
+            position: absolute;
+            top: 8px;
+            right: 8px;
+        }
+
+        .button2 {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 6px 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+    </style>
+    <body>
+        <div class = "main"; id = "section1"; style = "text-align: center"> 
+            <h1 style = "text-align: center"; class = "custom1">The Beach Inquirer </h1>
+            <h2> Welcome to the app for all your beach-going recommendations! </h2>
+            
+        </div>
+
+        <div class = "main"; id = "section2"; style = "text-align: center">
+            <h2> To begin, enter a location below! </h2>
+            <div class = "group group2">
+                <form>
+                    <label for = "query">Search a Beach:</label><br>
+                    <input placeholder="name" type="text" id="query" name="query" value="El Matador Beach"><br>
+                    
+                    <!-- <input type="submit" value="Submit"> --> 
+                </form> <br>
+            </div>
+            <button class = "button2"; id="submit"; onclick="getData()"> Submit </button> <br> <br> <br>
+            <a href = "#"; font size = "50"> Click here to return to the top. </a> 
+            <p id="loc_data"></p>
+        </div>
+
+        <script>
+            function getData() {
+                const prefix = "http://127.0.0.1:5000/beachdata?";
+                var query = "query=" + document.getElementById("query").value;
+                const url = prefix + query;
+                // document.getElementById("loc_data").innerHTML = "DATA: " + url;
+                var request = new XMLHttpRequest();
+                request.open("GET", url, false);
+                document.getElementById("loc_data").innerHTML = "DATA: " + url;
+                window.open(url);
+                // request.send();
+                // var text = request.response;
+                // document.getElementById("loc_data").innerHTML = "DATA: " + request.status;
+            }
+
+            function openFrontPageTabs(evt, tabName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+
+            // Getting element for tabs
+            document.getElementById("defaultOpen").click();
+
+            function workingAlert() {
+                alert("We're working on it - please come back later!");
+            }
+            
+        </script>
+    </body>
+</html>

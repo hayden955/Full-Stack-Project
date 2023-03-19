@@ -1,0 +1,187 @@
+.App {
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+body {
+  /* background: white; */
+  background: "url('https://www.pexels.com/photo/scenic-view-of-beach-248797/')";
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+/* B3C8A7 */
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+  form {
+    border: 3px solid #f1f1f1;
+  }
+  
+  /* Full-width inputs */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #8CB369;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* Add a hover effect for buttons */
+  button:hover {
+    opacity: 0.5;
+  }
+  
+  /* Extra style for the cancel button (green) */
+  .cancelbtn {
+    width: auto;
+    padding: 10px 10px;
+    display: inline-block;
+    background-color: #8CB369;
+  }
+  
+  /* Add padding to containers */
+  .container {
+    padding: 16px;
+    background: grey;
+  }
+  
+  /* The "Forgot password" text */
+  span.psw {
+    float: right;
+    clear: right;
+    padding-top: 16px;
+    color: white;
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+  }
+
+  /* Beach */
+  .Mapp {
+    text-align: center;
+    background-color: ivory;
+    height: 100vh;
+  }
+  
+  .MApp-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 4rem;
+    pointer-events: none;
+  }
+  
+  .MApp-header {
+    background-color: #282c34;
+    min-height: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .MApp-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* SHAME - Bad CSS practices ahead */
+  /* Custom */
+  .fw-md {
+    font-weight: 800 !important;
+  }
+  
+  .h-lg {
+    height: 35rem;
+  }
+  
+  .font-1-5 {
+    font-size: 1.5rem;
+  }
+  
+  .image-wrapper-sm {
+    object-fit: cover;
+    border-radius: 50%;
+    height: 15rem;
+    width: 100%;
+  }
+  
+  /* BOOTSTRAP Overwrites */
+  .card-title {
+    color: #ee8301;
+  }
+  
+  /* ANTD Overwrites */
+  .ant-btn-primary {
+    background-color: #ee8301 !important;
+    border-color: #ee8301 !important;
+  }
+  
+  .ant-slider-handle {
+    border-color: #ee8301 !important;
+  }
+  
+  .ant-slider-track {
+    background-color: #282c34 !important;
+  }
